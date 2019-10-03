@@ -8,6 +8,9 @@ const hbs = exphbs.create();
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+// app.use(express.static('public'));
+// app.use(express.static('images'));
+app.use('/static', express.static('public'));
 
 
 // app.set('view engine', 'ejs');
