@@ -3,6 +3,34 @@
         <title>Hello</title>
     </head>
     <body>
-        This is handlebar example!
+        <div class="container">
+            <div align="center" class="jumbotron">This is handlebar example!</div>
+            <p align="center">{{ title }}</p>
+            <div align="center" class="jumbotron">
+                {{#each languages}}
+                    <p class="text-success">{{@index}}. {{this}}</p>
+                {{/each}}
+            </div>
+            {{#if user.admin}}
+                <button class="btn btn-default">Launch Spacecraft</button>
+            {{else}}
+                <button class="btn btn-primary"> Log in</button>
+            {{/if}}
+
+            {{#unless user.admin}}
+                    <button class="btn btn-default">Launch Spacecraft</button>
+            {{else}}
+                    <button class="btn btn-primary"> Log in</button>
+            {{/unless}}
+
+            {{#with user2}}
+            <p class="lead">{{name}}</p>
+            {{#with contact}}
+            <span class="text-danger">Twitter: @{{twitter}}</span>
+            {{/with}}
+            <span class="text-warning">Address: {{address.city}},
+            {{/with}}
+            {{user.address.state}}</span>
+        </div>
     </body>
 </html>
