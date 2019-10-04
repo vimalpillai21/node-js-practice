@@ -17,7 +17,7 @@ var upload = multer();
 var app = express();
 const port = 3000;
 
-const hbs = exphbs.create();
+// const hbs = exphbs.create();
 
 app.engine("handlebars", exphbs({
     helpers: {
