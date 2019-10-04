@@ -1,16 +1,33 @@
 <html>
 <head>
     <title>
-        Person
+        Person List
     </title>
 </head>
 <body>
-{{#ifeq type 'error'}}
-    <h3 style="color:red">{{message}}</h3>
-{{/ifeq}}
-{{#ifnoteq type 'error'}}
-    <h3>New Person, name: {{person.name}}, age: {{person.age}} and
-        nationality: {{person.nationality}}</h3>
-{{/ifnoteq}}
+<div class="container">
+    <div class="row">
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Nationality</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each person}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{age}}</td>
+                <td>{{nationality}}</td>
+            </tr>
+
+        {{/each}}
+
+        </tbody>
+    </table>
+    </div>
+</div>
 </body>
 </html>

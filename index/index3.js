@@ -19,16 +19,22 @@ const port = 3000;
 
 const hbs = exphbs.create();
 
-app.engine("handlebars", exphbs({helpers:{
-        ifeq: function(a,b,options){
-            if (a === b) { return options.fn(this); }
+app.engine("handlebars", exphbs({
+    helpers: {
+        ifeq: function (a, b, options) {
+            if (a === b) {
+                return options.fn(this);
+            }
             return options.inverse(this);
         },
-        ifnoteq: function(a,b,options){
-            if (a !== b) { return options.fn(this); }
+        ifnoteq: function (a, b, options) {
+            if (a !== b) {
+                return options.fn(this);
+            }
             return options.inverse(this);
         }
-    },defaultLayout: "main"}));
+    }, defaultLayout: "main"
+}));
 app.set("view engine", "handlebars");
 
 app.use('/static', express.static('public'));
@@ -75,9 +81,9 @@ app.post('/person', function (req, res) {
         });
     }
 });
-app.get('/people',function(req,res){
-    Person.find(function(err, response){
-        res.json(response);
+app.get('/people', function (req, res) {
+    Person.find(function (err, response) {
+        res.render('person_list', {person: JSON.parse(JSON.stringify(response)), languages: ['a', 'b', 'c']})
     });
 });
 app.listen(port);
