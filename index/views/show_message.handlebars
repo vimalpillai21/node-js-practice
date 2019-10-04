@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>
+        Person
+    </title>
+</head>
+<body>
+{{#ifeq type 'error'}}
+    <h3 style="color:red">{{message}}</h3>
+{{/ifeq}}
+{{#ifnoteq type 'error'}}
+    <h3>New Person, name: {{person.name}}, age: {{person.age}} and
+    nationality: {{person.nationality}}</h3>
+{{/ifnoteq}}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Person</title>
+    </head>
+    <body>
+        <div class="container">
+        <form action="/person" method="POST">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="text" class="form-control" name="age" id="age">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" class="form-control" name="nationality" id="nationality">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Person</button>
+        </form>
+        </div>
+    </body>
+</html>
