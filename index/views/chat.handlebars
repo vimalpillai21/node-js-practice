@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Chat functionality</title>
+    </head>
+    <body>
+        <h2>Hello World</h2>    
+        <ul id="first">
+            <li>First MEssage</li>
+        </ul>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+            const protooClient = require('protoo-client');
+            const transport = new protooClient.WebSocketTransport('wss://localhost:4443');
+            const peer = new protooClient.Peer(transport);
+            try
+                {
+                const data =  peer.request('chicken', { foo: 'bar' });
+
+                console.log('got response data:', data);
+                }
+            catch (error)
+                {
+                console.error('request failed:', error);
+                }
+                peer.notify('lalala', { foo: 'bar' });
+
+                peer.on('request', (request, accept, reject) =>
+                {
+                    if (something in request)
+                        accept({ foo: 'bar' });
+                    else
+                        reject(400, 'Not Here');
+                });
+                peer.on('notification', (notification) =>
+                {
+                    // Do something.
+                    console.log("hello world");
+                });
+        </script>
+    </body>
+</html>
