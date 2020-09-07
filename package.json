@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
-    "handlebars": "^4.4.2",
+    "handlebars": "^4.5.3",
     "mediasoup": "^3.2.5",
     "mongoose": "^5.7.3",
     "multer": "^1.4.2",
